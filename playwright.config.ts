@@ -16,15 +16,10 @@ export default defineConfig({
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    storageState: undefined,
-  launchOptions: {
-    args: ['--incognito']
-  }},
+  },
 
   projects: [
-
     { name: 'setup', testMatch: /.*\.setup\.ts/ },
-
     {
       name: 'chromium',
       use: {
@@ -33,7 +28,5 @@ export default defineConfig({
       },
       dependencies: ['setup'],
     },
-
   ],
-
 });

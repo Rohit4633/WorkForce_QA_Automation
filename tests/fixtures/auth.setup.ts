@@ -5,8 +5,8 @@ const authFile = 'playwright/.auth/user.json';
 setup('authenticate', async ({ page }) => {
 
   // Step 1 — Navigate to app
-  await page.goto('/');
-  await page.waitForLoadState('networkidle');
+  await page.goto(process.env.BASE_URL || 'https://workforce.noonstg.partners/en?project=PRJ1455');
+  await page.waitForTimeout(3000);
 
   // Step 2 — Enter email
   await page.getByPlaceholder('Enter your phone number or email').fill(process.env.TEST_USER_EMAIL || 'rmangla@noon.com');
@@ -42,8 +42,8 @@ setup('authenticate', async ({ page }) => {
     console.log('Passkey prompt not found — skipping');
   }
 
-  // Step 6 — Wait for homepage
-  await page.waitForURL('**/en?project=PRJ1455', { timeout: 60000 });
+  // Step 6 — Wait for homepage (accepts any /en URL with or without query param)
+  await page.waitForURL('**/en**', { timeout: 60000 });
   await page.waitForTimeout(3000);
 
   // Step 7 — Save session
