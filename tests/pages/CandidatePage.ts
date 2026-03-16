@@ -9,7 +9,7 @@ export class CandidatePage extends BasePage {
 
   async clickAddCandidate() {
     await this.page.getByRole('button', { name: 'Add Candidate' }).click();
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(2000);
   }
 
   async fillFirstName(name: string) {
@@ -23,30 +23,53 @@ export class CandidatePage extends BasePage {
   async selectCountryCode() {
     // Open country code dropdown
     await this.page.locator('.MuiAutocomplete-wrapper').first().click();
-    await this.page.waitForTimeout(500);
+    await this.page.waitForTimeout(1000);
+
     // Type +91 to search for India
-    await this.page.getByRole('combobox', { name: 'Personal phone number' }).fill('+91');
-    await this.page.waitForTimeout(500);
-    // Click India option from list
-    await this.page.locator('.MuiListItemDecorator-root > .FlagIcon_flagWrapper__Ip2c9').click();
+    const combobox = this.page.getByRole('combobox', { name: 'Personal phone number' });
+    await combobox.waitFor({ state: 'visible', timeout: 10000 });
+    await combobox.fill('+91');
+    await this.page.waitForTimeout(1000);
+
+    // Click India option — try multiple locator strategies
+    const indiaOption = this.page.locator('.MuiListItemDecorator-root > .FlagIcon_flagWrapper__Ip2c9');
+    const indiaOptionAlt = this.page.getByRole('option', { name: /india|IN|\+91/i }).first();
+
+    if (await indiaOption.isVisible()) {
+      await indiaOption.click();
+    } else {
+      await indiaOptionAlt.click();
+    }
     await this.page.waitForTimeout(500);
   }
 
   async fillPhoneNumber(phone: string) {
-    await this.page.getByRole('textbox', { name: 'Personal phone number' }).fill(phone);
+    const phoneInput = this.page.getByRole('textbox', { name: 'Personal phone number' });
+    await phoneInput.waitFor({ state: 'visible', timeout: 10000 });
+    await phoneInput.fill(phone);
   }
 
   async selectNationality() {
-    await this.page.getByRole('combobox', { name: 'Nationality' }).click();
+    const nationality = this.page.getByRole('combobox', { name: 'Nationality' });
+    await nationality.waitFor({ state: 'visible', timeout: 10000 });
+    await nationality.click();
     await this.page.waitForTimeout(500);
-    await this.page.getByRole('combobox', { name: 'Nationality' }).fill('india');
-    await this.page.waitForTimeout(500);
+    await nationality.fill('india');
+    await this.page.waitForTimeout(1000);
     await this.page.getByRole('option', { name: 'IN India' }).click();
     await this.page.waitForTimeout(500);
   }
 
   async fillEmiratesId(id: string) {
-    await this.page.getByPlaceholder('123-4567-8901234-5').fill(id);
+    // Try placeholder first, fallback to label
+    const emiratesInput = this.page.getByPlaceholder('123-4567-8901234-5');
+    const emiratesInputAlt = this.page.getByLabel('Emirates ID');
+
+    if (await emiratesInput.isVisible()) {
+      await emiratesInput.fill(id);
+    } else {
+      await emiratesInputAlt.fill(id);
+    }
   }
 
   async selectVisaSponsorship(answer: 'Yes' | 'No') {
