@@ -22,9 +22,8 @@ test.describe('Candidate Management', () => {
     console.log(`Phone: +91 ${phone}`);
     console.log(`Emirates ID: ${emiratesId}`);
 
-    // Step 1 — Navigate to homepage
-    await page.goto(process.env.BASE_URL || 'https://workforce.noonstg.partners/en?project=PRJ1455');
-    await page.waitForLoadState('networkidle');
+    // Step 1 — Navigate to homepage (handles project selection automatically)
+    await candidatePage.goto();
 
     // Step 2 — Click Add Candidate
     await candidatePage.clickAddCandidate();
@@ -50,8 +49,10 @@ test.describe('Candidate Management', () => {
     await candidatePage.clickCreateProfile();
 
     // Step 9 — Verify in table
-    const row = candidatePage.page.getByRole('row').filter({ hasText: firstName });
-    await expect(row).toBeVisible({ timeout: 10000 });
+    // Replace Step 9 verification:
+const row = candidatePage.page.getByRole('row')
+  .filter({ hasText: `${firstName} ${lastName}` });
+await expect(row.first()).toBeVisible({ timeout: 10000 });
 
     console.log(`✅ Candidate ${firstName} ${lastName} created successfully`);
   });

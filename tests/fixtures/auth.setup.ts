@@ -1,4 +1,5 @@
 import { test as setup } from '@playwright/test';
+import { BasePage } from '../pages/BasePage';
 
 const authFile = 'playwright/.auth/user.json';
 
@@ -15,8 +16,7 @@ setup('authenticate', async ({ page }) => {
 
   // Step 3 — Conditionally click "Continue with email OTP" if visible
   const emailOtpButton = page.getByRole('button', { name: /continue with email otp/i });
-  const isEmailOtpVisible = await emailOtpButton.isVisible();
-  if (isEmailOtpVisible) {
+  if (await emailOtpButton.isVisible()) {
     console.log('Email OTP button found — clicking it');
     await emailOtpButton.click();
     await page.waitForTimeout(1500);
@@ -31,10 +31,9 @@ setup('authenticate', async ({ page }) => {
   await page.locator('button[type="submit"]').click();
   await page.waitForTimeout(2000);
 
-  // Step 5 — Conditionally dismiss passkey setup if visible
+  // Step 5 — Conditionally dismiss passkey setup
   const maybeLaterBtn = page.getByText('Maybe Later');
-  const isMaybeLaterVisible = await maybeLaterBtn.isVisible();
-  if (isMaybeLaterVisible) {
+  if (await maybeLaterBtn.isVisible()) {
     console.log('Passkey prompt found — dismissing');
     await maybeLaterBtn.click();
     await page.waitForTimeout(2000);
@@ -42,12 +41,11 @@ setup('authenticate', async ({ page }) => {
     console.log('Passkey prompt not found — skipping');
   }
 
-  // Step 6 — Wait for homepage (accepts any /en URL with or without query param)
-  await page.waitForURL('**/en**', { timeout: 60000 });
-  await page.waitForTimeout(3000);
+  // Step 6 — Handle project selection if needed
+  const basePage = new BasePage(page, setup);
+  await basePage.ensureCorrectProject();
 
   // Step 7 — Save session
   await page.context().storageState({ path: authFile });
-
   console.log('✅ Auth session saved successfully');
 });

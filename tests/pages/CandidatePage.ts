@@ -7,6 +7,12 @@ export class CandidatePage extends BasePage {
     super(page, test);
   }
 
+  // ── Navigation ───────────────────────────────────────────────────────────
+  async goto() {
+    await this.page.goto('/');
+    await this.ensureCorrectProject();
+  }
+
   async clickAddCandidate() {
     await this.page.getByRole('button', { name: 'Add Candidate' }).click();
     await this.page.waitForTimeout(2000);
@@ -21,17 +27,14 @@ export class CandidatePage extends BasePage {
   }
 
   async selectCountryCode() {
-    // Open country code dropdown
     await this.page.locator('.MuiAutocomplete-wrapper').first().click();
     await this.page.waitForTimeout(1000);
 
-    // Type +91 to search for India
     const combobox = this.page.getByRole('combobox', { name: 'Personal phone number' });
     await combobox.waitFor({ state: 'visible', timeout: 10000 });
     await combobox.fill('+91');
     await this.page.waitForTimeout(1000);
 
-    // Click India option — try multiple locator strategies
     const indiaOption = this.page.locator('.MuiListItemDecorator-root > .FlagIcon_flagWrapper__Ip2c9');
     const indiaOptionAlt = this.page.getByRole('option', { name: /india|IN|\+91/i }).first();
 
@@ -61,10 +64,8 @@ export class CandidatePage extends BasePage {
   }
 
   async fillEmiratesId(id: string) {
-    // Try placeholder first, fallback to label
     const emiratesInput = this.page.getByPlaceholder('123-4567-8901234-5');
     const emiratesInputAlt = this.page.getByLabel('Emirates ID');
-
     if (await emiratesInput.isVisible()) {
       await emiratesInput.fill(id);
     } else {

@@ -9,3 +9,4 @@ node_modules/
 zerostep.config.json 
 .env 
 dist/
+test-downloads/

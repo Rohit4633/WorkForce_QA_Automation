@@ -8,9 +8,11 @@ export class LoginPage extends BasePage {
   }
 
   async goto() {
-    await this.page.goto(process.env.BASE_URL || 'https://workforce.noonstg.partners/en?project=PRJ1455');
-    await this.waitForPageLoad();
-  }
+  await this.page.goto(
+    process.env.BASE_URL || 'https://workforce.noonstg.partners/en?project=PRJ1455'
+  );
+  await this.ensureCorrectProject();
+}
 
   async enterEmail(email: string) {
     await this.page.getByPlaceholder('Enter your phone number or email').fill(email);
