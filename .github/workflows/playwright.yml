@@ -28,7 +28,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test --workers=1
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
           ZEROSTEP_TOKEN: ${{ secrets.ZEROSTEP_TOKEN }}
