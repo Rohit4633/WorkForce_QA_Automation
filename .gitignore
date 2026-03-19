@@ -10,3 +10,4 @@ zerostep.config.json
 .env 
 dist/
 test-downloads/
+tests/data/last-created-candidate.json

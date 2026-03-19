@@ -20,12 +20,32 @@ export default defineConfig({
   },
 
   projects: [
-    { name: 'setup', testMatch: /.*\.setup\.ts/ },
+    // Auth setup — maximised only, no incognito
+    {
+      name: 'setup',
+      testMatch: /.*\.setup\.ts/,
+      use: {
+        viewport: null,
+        launchOptions: {
+          args: ['--start-maximized']
+        }
+      }
+    },
+
+    // Main tests — incognito + maximised
     {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
         storageState: 'playwright/.auth/user.json',
+        viewport: null,
+        deviceScaleFactor: undefined,
+        launchOptions: {
+          args: [
+            '--start-maximized',
+            '--incognito'
+          ]
+        }
       },
       dependencies: ['setup'],
     },
