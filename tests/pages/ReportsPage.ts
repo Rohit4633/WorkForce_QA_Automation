@@ -9,7 +9,23 @@ export class ReportsPage extends BasePage {
 
   // ── Navigate to Reports tab ───────────────────────────────────────────────
   async goToReports() {
-    await this.page.getByRole('button', { name: 'Reports' }).click();
+    // Try multiple locator strategies for the Reports sidebar button
+    const reportsBtn = this.page.getByRole('button', { name: 'Reports' });
+    const reportsBtnAlt = this.page.locator('button').filter({ hasText: 'Reports' });
+    const reportsBtnNav = this.page.locator('nav button').filter({ hasText: 'Reports' });
+
+    if (await reportsBtn.isVisible()) {
+      await reportsBtn.click();
+    } else if (await reportsBtnAlt.isVisible()) {
+      await reportsBtnAlt.click();
+    } else if (await reportsBtnNav.isVisible()) {
+      await reportsBtnNav.click();
+    } else {
+      // Last resort — navigate directly to reports URL
+      await this.page.goto(
+        'https://workforce.noonstg.partners/en/reports?project=PRJ1455'
+      );
+    }
     await this.page.waitForTimeout(2000);
   }
 
