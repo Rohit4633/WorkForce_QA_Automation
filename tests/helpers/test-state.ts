@@ -3,16 +3,26 @@ import * as path from 'path';
 
 const stateFile = path.join(__dirname, '../data/last-created-candidate.json');
 
-export function saveCreatedCandidate(firstName: string, lastName: string, emiratesId: string) {
+export function saveCreatedCandidate(
+  firstName: string,
+  lastName: string,
+  emiratesId: string,
+  phone?: string
+) {
   const dir = path.dirname(stateFile);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
-  fs.writeFileSync(stateFile, JSON.stringify({ firstName, lastName, emiratesId }));
+  fs.writeFileSync(stateFile, JSON.stringify({ firstName, lastName, emiratesId, phone }));
   console.log(`💾 Saved candidate: ${firstName} ${lastName} | Emirates ID: ${emiratesId}`);
 }
 
-export function loadCreatedCandidate(): { firstName: string; lastName: string; emiratesId: string } {
+export function loadCreatedCandidate(): {
+  firstName: string;
+  lastName: string;
+  emiratesId: string;
+  phone?: string;
+} {
   if (!fs.existsSync(stateFile)) {
     throw new Error('No candidate found — run create-candidate.spec.ts first');
   }
