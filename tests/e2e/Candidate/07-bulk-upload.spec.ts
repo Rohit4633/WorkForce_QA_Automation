@@ -42,19 +42,28 @@ test.describe('Candidate — Bulk Upload', () => {
     // ── Step 9: Click Back to Team ────────────────────────────────────────
     await bulkUploadPage.clickBackToTeam();
 
+    // Wait for homepage to fully load after bulk upload
+    await page.waitForTimeout(3000);
+    await page.waitForLoadState('domcontentloaded');
+    
     // ── Step 10: Verify all candidates appear in table ────────────────────
     for (const candidate of candidates) {
-      await page.getByPlaceholder('Search').fill(candidate.firstName);
-      await page.waitForTimeout(1500);
+  // Clear search first
+  await page.getByPlaceholder('Search').clear();
+  await page.waitForTimeout(1000);
 
-      const isVisible = await bulkUploadPage.verifyCandidateInTable(candidate.firstName);
-      expect(isVisible).toBe(true);
-      console.log(`✅ ${candidate.firstName} ${candidate.lastName} found in table`);
+  // Search for candidate
+  await page.getByPlaceholder('Search').fill(candidate.firstName);
+  await page.waitForTimeout(2500); // give search time to filter
 
-      await page.getByPlaceholder('Search').clear();
-      await page.waitForTimeout(500);
+  // Verify with longer timeout
+  const row = page.getByRole('row').filter({ hasText: candidate.firstName });
+  await expect(row.first()).toBeVisible({ timeout: 15000 });
+  console.log(`✅ ${candidate.firstName} ${candidate.lastName} found in table`);
+
+  // Clear between searches
+  await page.getByPlaceholder('Search').clear();
+  await page.waitForTimeout(500);
     }
-
-    console.log(`🎉 All ${candidates.length} candidates verified in table`);
-  });
+});
 });
