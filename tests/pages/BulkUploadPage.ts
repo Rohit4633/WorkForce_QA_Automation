@@ -49,7 +49,7 @@ export class BulkUploadPage extends BasePage {
   // ── Click Back to Team ────────────────────────────────────────────────────
   async clickBackToTeam() {
     await this.page.getByRole('button', { name: 'Back to Team' }).click();
-    await this.page.waitForTimeout(2000);
+    await this.page.waitForTimeout(4000);
   }
 
   // ── Verify candidates in table ────────────────────────────────────────────
