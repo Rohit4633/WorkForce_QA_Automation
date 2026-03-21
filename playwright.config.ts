@@ -10,7 +10,15 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 1 : 4,
-  reporter: [['html'], ['list']],
+  reporter: [
+    ['html'],
+    ['list'],
+    ['allure-playwright', {
+      detail: true,
+      outputFolder: 'allure-results',
+      suiteTitle: true,
+    }]
+  ],
 
   use: {
     baseURL: process.env.BASE_URL || 'https://workforce.noonstg.partners/en?project=PRJ1455',

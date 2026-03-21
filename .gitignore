@@ -11,3 +11,6 @@ zerostep.config.json
 dist/
 test-downloads/
 tests/data/last-created-candidate.json
+allure-results/
+allure-report/
+allure-history/

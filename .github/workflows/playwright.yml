@@ -6,11 +6,11 @@ on:
   pull_request:
     branches: [ main, master ]
 
-  # ── Run tests on schedule every night at midnight UTC ──────────────────
+  # ── Run tests on schedule every day at 12 PM IST (6:30 AM UTC) ────────
   schedule:
-    - cron: '30 6 * * *'  # 12:30 PM IST every day
+    - cron: '30 6 * * *'
 
-  # ── Allow manual trigger from GitHub Actions tab ───────────────────────
+  # ── Allow manual trigger ───────────────────────────────────────────────
   workflow_dispatch:
     inputs:
       environment:
@@ -27,7 +27,7 @@ permissions:
 
 jobs:
 
-  # ── Job 1: Smoke Tests (fast subset — runs first) ─────────────────────
+  # ── Job 1: Smoke Tests ─────────────────────────────────────────────────
   smoke:
     name: 🚀 Smoke Tests [${{ github.event.inputs.environment || 'staging' }}]
     timeout-minutes: 20
@@ -66,7 +66,7 @@ jobs:
           path: test-results/
           retention-days: 7
 
-  # ── Job 2: Full E2E Tests (runs after smoke passes) ───────────────────
+  # ── Job 2: Full E2E Tests ──────────────────────────────────────────────
   e2e:
     name: 🎭 Full E2E Tests [${{ github.event.inputs.environment || 'staging' }}]
     needs: smoke
@@ -89,6 +89,16 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
+      - name: Install Allure commandline
+        run: npm install -g allure-commandline
+
+      - name: Restore Allure history
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: allure-history
+          path: allure-history
+
       - name: Run Full E2E Tests
         run: npx playwright test --workers=1
         env:
@@ -98,7 +108,27 @@ jobs:
           TEST_OTP: ${{ secrets.TEST_OTP }}
           ENVIRONMENT: ${{ github.event.inputs.environment || 'staging' }}
 
-      # ── Test Retry Screenshot Summary ──────────────────────────────────
+      - name: Generate Allure Report
+        if: always()
+        run: |
+          if [ -d "allure-history" ]; then
+            allure generate allure-results --clean -o allure-report --history allure-history
+          else
+            allure generate allure-results --clean -o allure-report
+          fi
+
+      - name: Save Allure history
+        if: always()
+        run: cp -r allure-report/history allure-history || true
+
+      - name: Upload Allure history artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-history
+          path: allure-history
+          retention-days: 30
+
       - name: Generate Test Summary
         if: always()
         run: |
@@ -108,13 +138,9 @@ jobs:
           echo "**Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
           echo "**Triggered by:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          if [ -f "test-results/.last-run.json" ]; then
-            echo "### Test Results" >> $GITHUB_STEP_SUMMARY
-            cat test-results/.last-run.json >> $GITHUB_STEP_SUMMARY
-          fi
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 📊 Report" >> $GITHUB_STEP_SUMMARY
-          echo "Full report available at: https://Rohit4633.github.io/playwright-zerostep-e2e/" >> $GITHUB_STEP_SUMMARY
+          echo "### 📊 Reports" >> $GITHUB_STEP_SUMMARY
+          echo "- Playwright Report: https://Rohit4633.github.io/playwright-zerostep-e2e/" >> $GITHUB_STEP_SUMMARY
+          echo "- Allure Report: https://Rohit4633.github.io/playwright-zerostep-e2e/allure/" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v4
@@ -124,19 +150,35 @@ jobs:
           path: playwright-report/
           retention-days: 30
 
+      - name: Upload Allure Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-report
+          path: allure-report/
+          retention-days: 30
+
       - name: Upload Test Results with Screenshots
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: test-results-with-screenshots
-          path: |
-            test-results/
-            playwright-report/
+          path: test-results/
           retention-days: 7
 
-      - name: Deploy report to GitHub Pages
+      - name: Deploy Playwright Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./playwright-report
+          destination_dir: .
+
+      - name: Deploy Allure Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
+          destination_dir: allure
+          keep_files: true
