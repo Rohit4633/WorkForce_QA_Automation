@@ -6,8 +6,70 @@ on:
   pull_request:
     branches: [ main, master ]
 
+  # ── Run tests on schedule every night at midnight UTC ──────────────────
+  schedule:
+    - cron: '30 6 * * *'  # 12:30 PM IST every day
+
+  # ── Allow manual trigger from GitHub Actions tab ───────────────────────
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run tests against'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+
+permissions:
+  contents: write
+
 jobs:
-  test:
+
+  # ── Job 1: Smoke Tests (fast subset — runs first) ─────────────────────
+  smoke:
+    name: 🚀 Smoke Tests [${{ github.event.inputs.environment || 'staging' }}]
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Smoke Tests
+        run: npx playwright test tests/e2e/Candidate/01-create-candidate.spec.ts tests/e2e/homepage/04-homepage-search.spec.ts --workers=1
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          ZEROSTEP_TOKEN: ${{ secrets.ZEROSTEP_TOKEN }}
+          TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
+          TEST_OTP: ${{ secrets.TEST_OTP }}
+          ENVIRONMENT: ${{ github.event.inputs.environment || 'staging' }}
+
+      - name: Upload Smoke Test Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: smoke-test-results
+          path: test-results/
+          retention-days: 7
+
+  # ── Job 2: Full E2E Tests (runs after smoke passes) ───────────────────
+  e2e:
+    name: 🎭 Full E2E Tests [${{ github.event.inputs.environment || 'staging' }}]
+    needs: smoke
     timeout-minutes: 60
     runs-on: ubuntu-latest
 
@@ -27,13 +89,32 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Run Playwright tests
+      - name: Run Full E2E Tests
         run: npx playwright test --workers=1
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
           ZEROSTEP_TOKEN: ${{ secrets.ZEROSTEP_TOKEN }}
           TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
           TEST_OTP: ${{ secrets.TEST_OTP }}
+          ENVIRONMENT: ${{ github.event.inputs.environment || 'staging' }}
+
+      # ── Test Retry Screenshot Summary ──────────────────────────────────
+      - name: Generate Test Summary
+        if: always()
+        run: |
+          echo "## 🎭 Playwright Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Environment:** ${{ github.event.inputs.environment || 'staging' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Triggered by:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f "test-results/.last-run.json" ]; then
+            echo "### Test Results" >> $GITHUB_STEP_SUMMARY
+            cat test-results/.last-run.json >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📊 Report" >> $GITHUB_STEP_SUMMARY
+          echo "Full report available at: https://Rohit4633.github.io/playwright-zerostep-e2e/" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v4
@@ -43,12 +124,14 @@ jobs:
           path: playwright-report/
           retention-days: 30
 
-      - name: Upload Test Results
+      - name: Upload Test Results with Screenshots
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: test-results
-          path: test-results/
+          name: test-results-with-screenshots
+          path: |
+            test-results/
+            playwright-report/
           retention-days: 7
 
       - name: Deploy report to GitHub Pages
