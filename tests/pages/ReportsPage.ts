@@ -9,7 +9,6 @@ export class ReportsPage extends BasePage {
 
   // ── Navigate to Reports tab ───────────────────────────────────────────────
   async goToReports() {
-    // Try multiple locator strategies for the Reports sidebar button
     const reportsBtn = this.page.getByRole('button', { name: 'Reports' });
     const reportsBtnAlt = this.page.locator('button').filter({ hasText: 'Reports' });
     const reportsBtnNav = this.page.locator('nav button').filter({ hasText: 'Reports' });
@@ -21,7 +20,6 @@ export class ReportsPage extends BasePage {
     } else if (await reportsBtnNav.isVisible()) {
       await reportsBtnNav.click();
     } else {
-      // Last resort — navigate directly to reports URL
       await this.page.goto(
         'https://workforce.noonstg.partners/en/reports?project=PRJ1455'
       );
@@ -69,7 +67,6 @@ export class ReportsPage extends BasePage {
     const count = await rows.count();
     const data: Record<string, string>[] = [];
 
-    // Get headers — use lowercase for consistent matching
     const headerRow = this.page.getByRole('columnheader');
     const headerCount = await headerRow.count();
     const headers: string[] = [];
@@ -78,7 +75,6 @@ export class ReportsPage extends BasePage {
       headers.push(text?.trim().toLowerCase() || `col${i}`);
     }
 
-    // Get data rows
     for (let i = 0; i < count; i++) {
       const cells = rows.nth(i).getByRole('cell');
       const cellCount = await cells.count();
