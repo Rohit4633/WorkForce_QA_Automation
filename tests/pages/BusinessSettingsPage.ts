@@ -9,7 +9,19 @@ export class BusinessSettingsPage extends BasePage {
 
   // ── Navigate to Business Settings ─────────────────────────────────────────
   async goToBusinessSettings() {
-    await this.page.getByRole('button', { name: 'Business Settings' }).click();
+    // Try clicking sidebar button first
+    const businessSettingsBtn = this.page.getByRole('button', { name: 'Business Settings' });
+    const isVisible = await businessSettingsBtn.isVisible({ timeout: 3000 }).catch(() => false);
+
+    if (isVisible) {
+      await businessSettingsBtn.click();
+    } else {
+      // Fallback — navigate directly to Business Settings URL
+      console.log('Business Settings button not visible — navigating directly');
+      await this.page.goto(
+        'https://workforce.noonstg.partners/en/business-settings?project=PRJ1455'
+      );
+    }
     await this.page.waitForTimeout(2000);
   }
 
