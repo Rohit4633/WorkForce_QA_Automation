@@ -8,7 +8,7 @@ on:
 
   # ── Run tests every Monday at 12 PM IST (6:30 AM UTC) ─────────────────
   schedule:
-    - cron: '30 6 * * 1'  # Every Monday at 12:30 PM IST
+    - cron: '30 6 * * 1'
 
   # ── Allow manual trigger ───────────────────────────────────────────────
   workflow_dispatch:
@@ -24,6 +24,10 @@ on:
 
 permissions:
   contents: write
+
+env:
+  # ── Opt into Node.js 24 now to avoid deprecation warnings ─────────────
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
 
@@ -63,7 +67,10 @@ jobs:
         if: always()
         with:
           name: smoke-test-results
-          path: test-results/
+          path: |
+            test-results/
+            playwright-report/
+          if-no-files-found: ignore
           retention-days: 7
 
   # ── Job 2: Full E2E Tests ──────────────────────────────────────────────
@@ -127,6 +134,7 @@ jobs:
         with:
           name: allure-history
           path: allure-history
+          if-no-files-found: ignore
           retention-days: 30
 
       - name: Generate Test Summary
@@ -148,6 +156,7 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
+          if-no-files-found: ignore
           retention-days: 30
 
       - name: Upload Allure Report
@@ -156,6 +165,7 @@ jobs:
         with:
           name: allure-report
           path: allure-report/
+          if-no-files-found: ignore
           retention-days: 30
 
       - name: Upload Test Results with Screenshots
@@ -164,6 +174,7 @@ jobs:
         with:
           name: test-results-with-screenshots
           path: test-results/
+          if-no-files-found: ignore
           retention-days: 7
 
       - name: Deploy Playwright Report to GitHub Pages
