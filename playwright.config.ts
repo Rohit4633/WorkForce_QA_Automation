@@ -40,7 +40,7 @@ export default defineConfig({
       }
     },
 
-    // Main tests — incognito + maximised
+    // Main tests — maximised, NO incognito (storageState needs to work)
     {
       name: 'chromium',
       use: {
@@ -49,10 +49,7 @@ export default defineConfig({
         viewport: null,
         deviceScaleFactor: undefined,
         launchOptions: {
-          args: [
-            '--start-maximized',
-            '--incognito'
-          ]
+          args: ['--start-maximized']
         }
       },
       dependencies: ['setup'],
