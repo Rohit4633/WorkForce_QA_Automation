@@ -1,0 +1,9 @@
+Adding contact — Title: Coordinator6703, Name: Omar6703 Farouk, Phone: +971562149011, Email: contact686703@testmail.com
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+Business Settings button not visible — navigating directly
+✅ Contact Type verified in table
+✅ Title Coordinator6703 verified in table
+✅ Name Omar6703 Farouk verified in table
+✅ Email contact686703@testmail.com verified in table
+✅ All contact details verified in table

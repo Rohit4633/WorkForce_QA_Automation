@@ -1,0 +1,5 @@
+Searching for candidate: Neha1989 Dharmapala
+Using phone search term: 98534428
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+✅ Candidate Neha1989 Dharmapala found via phone search

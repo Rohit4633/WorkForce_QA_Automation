@@ -1,0 +1,4 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+✅ File downloaded: members_list_2026-04-08.csv
+✅ Combined filter file exists at: /tmp/playwright-artifacts-uIFT1B/c025464d-59ad-44b2-ba3f-372d577a0dd4

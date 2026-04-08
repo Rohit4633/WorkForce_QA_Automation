@@ -1,0 +1,4 @@
+Email OTP button not found — skipping
+Passkey prompt found — dismissing
+✅ Correct project already selected
+✅ Auth session saved successfully

@@ -1,0 +1,9 @@
+Using passport number: RY6786985
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+✅ Three dots menu opened for Passport
+✅ View option clicked
+✅ View document modal opened
+✅ Passport document type verified in view modal
+✅ Passport number RY6786985 verified in view modal
+✅ View modal closed
