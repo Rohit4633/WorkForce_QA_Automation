@@ -38,7 +38,7 @@ test.describe('Candidate Management', () => {
     await expect(row.first()).toBeVisible({ timeout: 10000 });
 
     // Save candidate details for subsequent tests
-    saveCreatedCandidate(firstName, lastName, emiratesId);
+    saveCreatedCandidate(firstName, lastName, emiratesId, `+91${phone}`);
 
     console.log(`✅ Candidate ${firstName} ${lastName} created successfully`);
   });
