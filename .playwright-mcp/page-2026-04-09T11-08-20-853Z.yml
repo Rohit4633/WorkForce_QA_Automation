@@ -1,0 +1,403 @@
+- generic [ref=e1]:
+  - alert [ref=e2]
+  - iframe [ref=e4]:
+    - generic [active] [ref=f3e1]:
+      - main [ref=f3e2]:
+        - generic [ref=f3e5]:
+          - button [ref=f3e7] [cursor=pointer]:
+            - img [ref=f3e8]
+          - generic [ref=f3e9] [cursor=pointer]:
+            - link [ref=f3e10]:
+              - /url: https://workforce.noon.partners/
+            - img "logo" [ref=f3e42]
+          - button "1455 | noon Test AE" [ref=f3e13] [cursor=pointer]:
+            - generic [ref=f3e14]: "1455"
+            - generic [ref=f3e15]: "|"
+            - generic [ref=f3e16]: noon Test AE
+            - img [ref=f3e17]
+          - generic [ref=f3e20]:
+            - button [ref=f3e21] [cursor=pointer]:
+              - img [ref=f3e22]
+            - button "Change language" [ref=f3e27] [cursor=pointer]:
+              - img [ref=f3e28]
+            - button "R" [ref=f3e43] [cursor=pointer]:
+              - generic [ref=f3e37]: R
+      - alert [ref=f3e41]
+  - main [ref=e5]:
+    - navigation "mailbox folders" [ref=e1274]:
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - link "Workforce application logo" [ref=e1275] [cursor=pointer]:
+            - /url: /en?project=PRJ1455
+            - img "Workforce application logo" [ref=e1276]
+          - button [ref=e12] [cursor=pointer]:
+            - img [ref=e13]
+        - separator [ref=e15]
+        - generic [ref=e16]:
+          - list [ref=e17]:
+            - listitem [ref=e18]:
+              - button "Team" [ref=e1277] [cursor=pointer]:
+                - img [ref=e21]
+            - listitem [ref=e24]:
+              - button "Apply Candidates" [ref=e1278] [cursor=pointer]:
+                - img [ref=e27]
+            - listitem [ref=e30]:
+              - button "Reports" [ref=e1279] [cursor=pointer]:
+                - img [ref=e33]
+          - list [ref=e35]:
+            - listitem [ref=e36]:
+              - button "Business Settings" [ref=e1280] [cursor=pointer]:
+                - img [ref=e39]
+            - listitem [ref=e45]:
+              - button "Report a bug" [ref=e1281] [cursor=pointer]:
+                - img [ref=e48]
+        - heading "1455 Noon Test AE" [level=5] [ref=e1282]: 1N
+    - main [ref=e52]:
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - heading "Team" [level=1] [ref=e1283]
+            - heading "1045" [level=1] [ref=e1284]
+          - generic [ref=e59]:
+            - button "Bulk Upload" [ref=e1285] [cursor=pointer]:
+              - img [ref=e62]
+              - text: Bulk Upload
+            - button "Add Candidate" [ref=e1286] [cursor=pointer]:
+              - img [ref=e66]
+              - text: Add Candidate
+        - generic [ref=e68]:
+          - generic [ref=e69] [cursor=pointer]:
+            - combobox [ref=e70]: Filter by status
+            - img [ref=e72]
+            - textbox [ref=e74]
+          - generic [ref=e75]:
+            - generic [ref=e76]:
+              - img [ref=e78]
+              - textbox "Search" [ref=e1287]
+            - button "Filter" [active] [ref=e1288] [cursor=pointer]:
+              - img [ref=e83]
+              - text: Filter
+            - button "Download" [ref=e1289] [cursor=pointer]:
+              - img [ref=e87]
+              - text: Download
+        - generic [ref=e89]:
+          - table [ref=e91]:
+            - rowgroup [ref=e92]:
+              - row "Name Business Unit Job Title Status" [ref=e1290]:
+                - columnheader "Name" [ref=e1291]
+                - columnheader "Business Unit" [ref=e1292]
+                - columnheader "Job Title" [ref=e1293]
+                - columnheader "Status" [ref=e1294]
+            - rowgroup [ref=e98]:
+              - row "Unique1676 Candidate – New" [ref=e1295] [cursor=pointer]:
+                - cell "Unique1676 Candidate" [ref=e1296]
+                - cell [ref=e101]
+                - cell "–" [ref=e1297]
+                - cell "New" [ref=e1298]:
+                  - generic [ref=e105]: New
+              - row "Fixed3718 Candidate – New" [ref=e1299] [cursor=pointer]:
+                - cell "Fixed3718 Candidate" [ref=e1300]
+                - cell [ref=e108]
+                - cell "–" [ref=e1301]
+                - cell "New" [ref=e1302]:
+                  - generic [ref=e112]: New
+              - row "Ava6207 Dubey – New" [ref=e1303] [cursor=pointer]:
+                - cell "Ava6207 Dubey" [ref=e1304]
+                - cell [ref=e115]
+                - cell "–" [ref=e1305]
+                - cell "New" [ref=e1306]:
+                  - generic [ref=e119]: New
+              - row "Khalid85634 Farouk – New" [ref=e1307] [cursor=pointer]:
+                - cell "Khalid85634 Farouk" [ref=e1308]
+                - cell [ref=e122]
+                - cell "–" [ref=e1309]
+                - cell "New" [ref=e1310]:
+                  - generic [ref=e126]: New
+              - row "Sara85631 Mansour – New" [ref=e1311] [cursor=pointer]:
+                - cell "Sara85631 Mansour" [ref=e1312]
+                - cell [ref=e129]
+                - cell "–" [ref=e1313]
+                - cell "New" [ref=e1314]:
+                  - generic [ref=e133]: New
+              - row "Omar85632 Saleh – New" [ref=e1315] [cursor=pointer]:
+                - cell "Omar85632 Saleh" [ref=e1316]
+                - cell [ref=e136]
+                - cell "–" [ref=e1317]
+                - cell "New" [ref=e1318]:
+                  - generic [ref=e140]: New
+              - row "Layla85633 Nasser – New" [ref=e1319] [cursor=pointer]:
+                - cell "Layla85633 Nasser" [ref=e1320]
+                - cell [ref=e143]
+                - cell "–" [ref=e1321]
+                - cell "New" [ref=e1322]:
+                  - generic [ref=e147]: New
+              - row "Ahmed85630 Hassan – New" [ref=e1323] [cursor=pointer]:
+                - cell "Ahmed85630 Hassan" [ref=e1324]
+                - cell [ref=e150]
+                - cell "–" [ref=e1325]
+                - cell "New" [ref=e1326]:
+                  - generic [ref=e154]: New
+              - row "Unique9710 Candidate – New" [ref=e1327] [cursor=pointer]:
+                - cell "Unique9710 Candidate" [ref=e1328]
+                - cell [ref=e157]
+                - cell "–" [ref=e1329]
+                - cell "New" [ref=e1330]:
+                  - generic [ref=e161]: New
+              - row "Unique2687 Candidate – New" [ref=e1331] [cursor=pointer]:
+                - cell "Unique2687 Candidate" [ref=e1332]
+                - cell [ref=e164]
+                - cell "–" [ref=e1333]
+                - cell "New" [ref=e1334]:
+                  - generic [ref=e168]: New
+              - row "Layla3214 Sharma – New" [ref=e1335] [cursor=pointer]:
+                - cell "Layla3214 Sharma" [ref=e1336]
+                - cell [ref=e171]
+                - cell "–" [ref=e1337]
+                - cell "New" [ref=e1338]:
+                  - generic [ref=e175]: New
+              - row "Khalid47474 Farouk – New" [ref=e1339] [cursor=pointer]:
+                - cell "Khalid47474 Farouk" [ref=e1340]
+                - cell [ref=e178]
+                - cell "–" [ref=e1341]
+                - cell "New" [ref=e1342]:
+                  - generic [ref=e182]: New
+              - row "Layla47473 Nasser – New" [ref=e1343] [cursor=pointer]:
+                - cell "Layla47473 Nasser" [ref=e1344]
+                - cell [ref=e185]
+                - cell "–" [ref=e1345]
+                - cell "New" [ref=e1346]:
+                  - generic [ref=e189]: New
+              - row "Sara47461 Mansour – New" [ref=e1347] [cursor=pointer]:
+                - cell "Sara47461 Mansour" [ref=e1348]
+                - cell [ref=e192]
+                - cell "–" [ref=e1349]
+                - cell "New" [ref=e1350]:
+                  - generic [ref=e196]: New
+              - row "Ahmed47460 Hassan – New" [ref=e1351] [cursor=pointer]:
+                - cell "Ahmed47460 Hassan" [ref=e1352]
+                - cell [ref=e199]
+                - cell "–" [ref=e1353]
+                - cell "New" [ref=e1354]:
+                  - generic [ref=e203]: New
+              - row "Omar47472 Saleh – New" [ref=e1355] [cursor=pointer]:
+                - cell "Omar47472 Saleh" [ref=e1356]
+                - cell [ref=e206]
+                - cell "–" [ref=e1357]
+                - cell "New" [ref=e1358]:
+                  - generic [ref=e210]: New
+              - row "Unique4373 Candidate – New" [ref=e1359] [cursor=pointer]:
+                - cell "Unique4373 Candidate" [ref=e1360]
+                - cell [ref=e213]
+                - cell "–" [ref=e1361]
+                - cell "New" [ref=e1362]:
+                  - generic [ref=e217]: New
+              - row "Fixed8316 Candidate – New" [ref=e1363] [cursor=pointer]:
+                - cell "Fixed8316 Candidate" [ref=e1364]
+                - cell [ref=e220]
+                - cell "–" [ref=e1365]
+                - cell "New" [ref=e1366]:
+                  - generic [ref=e224]: New
+              - row "Khalid86464 Farouk – New" [ref=e1367] [cursor=pointer]:
+                - cell "Khalid86464 Farouk" [ref=e1368]
+                - cell [ref=e227]
+                - cell "–" [ref=e1369]
+                - cell "New" [ref=e1370]:
+                  - generic [ref=e231]: New
+              - row "Sara86461 Mansour – New" [ref=e1371] [cursor=pointer]:
+                - cell "Sara86461 Mansour" [ref=e1372]
+                - cell [ref=e234]
+                - cell "–" [ref=e1373]
+                - cell "New" [ref=e1374]:
+                  - generic [ref=e238]: New
+              - row "Omar86462 Saleh – New" [ref=e1375] [cursor=pointer]:
+                - cell "Omar86462 Saleh" [ref=e1376]
+                - cell [ref=e241]
+                - cell "–" [ref=e1377]
+                - cell "New" [ref=e1378]:
+                  - generic [ref=e245]: New
+              - row "Layla86463 Nasser – New" [ref=e1379] [cursor=pointer]:
+                - cell "Layla86463 Nasser" [ref=e1380]
+                - cell [ref=e248]
+                - cell "–" [ref=e1381]
+                - cell "New" [ref=e1382]:
+                  - generic [ref=e252]: New
+              - row "Ahmed86460 Hassan – New" [ref=e1383] [cursor=pointer]:
+                - cell "Ahmed86460 Hassan" [ref=e1384]
+                - cell [ref=e255]
+                - cell "–" [ref=e1385]
+                - cell "New" [ref=e1386]:
+                  - generic [ref=e259]: New
+              - row "Ananya8747 Sharma – New" [ref=e1387] [cursor=pointer]:
+                - cell "Ananya8747 Sharma" [ref=e1388]
+                - cell [ref=e262]
+                - cell "–" [ref=e1389]
+                - cell "New" [ref=e1390]:
+                  - generic [ref=e266]: New
+              - row "Fixed6686 Candidate – New" [ref=e1391] [cursor=pointer]:
+                - cell "Fixed6686 Candidate" [ref=e1392]
+                - cell [ref=e269]
+                - cell "–" [ref=e1393]
+                - cell "New" [ref=e1394]:
+                  - generic [ref=e273]: New
+              - row "Fixed2372 Candidate – New" [ref=e1395] [cursor=pointer]:
+                - cell "Fixed2372 Candidate" [ref=e1396]
+                - cell [ref=e276]
+                - cell "–" [ref=e1397]
+                - cell "New" [ref=e1398]:
+                  - generic [ref=e280]: New
+              - row "Fixed8630 Candidate – New" [ref=e1399] [cursor=pointer]:
+                - cell "Fixed8630 Candidate" [ref=e1400]
+                - cell [ref=e283]
+                - cell "–" [ref=e1401]
+                - cell "New" [ref=e1402]:
+                  - generic [ref=e287]: New
+              - row "Khalid17184 Farouk – New" [ref=e1403] [cursor=pointer]:
+                - cell "Khalid17184 Farouk" [ref=e1404]
+                - cell [ref=e290]
+                - cell "–" [ref=e1405]
+                - cell "New" [ref=e1406]:
+                  - generic [ref=e294]: New
+              - row "Layla17183 Nasser – New" [ref=e1407] [cursor=pointer]:
+                - cell "Layla17183 Nasser" [ref=e1408]
+                - cell [ref=e297]
+                - cell "–" [ref=e1409]
+                - cell "New" [ref=e1410]:
+                  - generic [ref=e301]: New
+              - row "Omar17182 Saleh – New" [ref=e1411] [cursor=pointer]:
+                - cell "Omar17182 Saleh" [ref=e1412]
+                - cell [ref=e304]
+                - cell "–" [ref=e1413]
+                - cell "New" [ref=e1414]:
+                  - generic [ref=e308]: New
+              - row "Sara17181 Mansour – New" [ref=e1415] [cursor=pointer]:
+                - cell "Sara17181 Mansour" [ref=e1416]
+                - cell [ref=e311]
+                - cell "–" [ref=e1417]
+                - cell "New" [ref=e1418]:
+                  - generic [ref=e315]: New
+              - row "Ahmed17170 Hassan – New" [ref=e1419] [cursor=pointer]:
+                - cell "Ahmed17170 Hassan" [ref=e1420]
+                - cell [ref=e318]
+                - cell "–" [ref=e1421]
+                - cell "New" [ref=e1422]:
+                  - generic [ref=e322]: New
+              - row "Unique2298 Candidate – New" [ref=e1423] [cursor=pointer]:
+                - cell "Unique2298 Candidate" [ref=e1424]
+                - cell [ref=e325]
+                - cell "–" [ref=e1425]
+                - cell "New" [ref=e1426]:
+                  - generic [ref=e329]: New
+              - row "Fixed1409 Candidate – New" [ref=e1427] [cursor=pointer]:
+                - cell "Fixed1409 Candidate" [ref=e1428]
+                - cell [ref=e332]
+                - cell "–" [ref=e1429]
+                - cell "New" [ref=e1430]:
+                  - generic [ref=e336]: New
+              - row "Khalid34724 Farouk – New" [ref=e1431] [cursor=pointer]:
+                - cell "Khalid34724 Farouk" [ref=e1432]
+                - cell [ref=e339]
+                - cell "–" [ref=e1433]
+                - cell "New" [ref=e1434]:
+                  - generic [ref=e343]: New
+              - row "Layla34723 Nasser – New" [ref=e1435] [cursor=pointer]:
+                - cell "Layla34723 Nasser" [ref=e1436]
+                - cell [ref=e346]
+                - cell "–" [ref=e1437]
+                - cell "New" [ref=e1438]:
+                  - generic [ref=e350]: New
+              - row "Sara34721 Mansour – New" [ref=e1439] [cursor=pointer]:
+                - cell "Sara34721 Mansour" [ref=e1440]
+                - cell [ref=e353]
+                - cell "–" [ref=e1441]
+                - cell "New" [ref=e1442]:
+                  - generic [ref=e357]: New
+              - row "Ahmed34720 Hassan – New" [ref=e1443] [cursor=pointer]:
+                - cell "Ahmed34720 Hassan" [ref=e1444]
+                - cell [ref=e360]
+                - cell "–" [ref=e1445]
+                - cell "New" [ref=e1446]:
+                  - generic [ref=e364]: New
+              - row "Omar34722 Saleh – New" [ref=e1447] [cursor=pointer]:
+                - cell "Omar34722 Saleh" [ref=e1448]
+                - cell [ref=e367]
+                - cell "–" [ref=e1449]
+                - cell "New" [ref=e1450]:
+                  - generic [ref=e371]: New
+              - row "Farjad4763 Verma – New" [ref=e1451] [cursor=pointer]:
+                - cell "Farjad4763 Verma" [ref=e1452]
+                - cell [ref=e374]
+                - cell "–" [ref=e1453]
+                - cell "New" [ref=e1454]:
+                  - generic [ref=e378]: New
+              - row "Unique3433 Candidate – New" [ref=e1455] [cursor=pointer]:
+                - cell "Unique3433 Candidate" [ref=e1456]
+                - cell [ref=e381]
+                - cell "–" [ref=e1457]
+                - cell "New" [ref=e1458]:
+                  - generic [ref=e385]: New
+              - row "Fixed2838 Candidate – New" [ref=e1459] [cursor=pointer]:
+                - cell "Fixed2838 Candidate" [ref=e1460]
+                - cell [ref=e388]
+                - cell "–" [ref=e1461]
+                - cell "New" [ref=e1462]:
+                  - generic [ref=e392]: New
+              - row "Khalid54174 Farouk – New" [ref=e1463] [cursor=pointer]:
+                - cell "Khalid54174 Farouk" [ref=e1464]
+                - cell [ref=e395]
+                - cell "–" [ref=e1465]
+                - cell "New" [ref=e1466]:
+                  - generic [ref=e399]: New
+              - row "Ahmed54170 Hassan – New" [ref=e1467] [cursor=pointer]:
+                - cell "Ahmed54170 Hassan" [ref=e1468]
+                - cell [ref=e402]
+                - cell "–" [ref=e1469]
+                - cell "New" [ref=e1470]:
+                  - generic [ref=e406]: New
+              - row "Layla54173 Nasser – New" [ref=e1471] [cursor=pointer]:
+                - cell "Layla54173 Nasser" [ref=e1472]
+                - cell [ref=e409]
+                - cell "–" [ref=e1473]
+                - cell "New" [ref=e1474]:
+                  - generic [ref=e413]: New
+              - row "Sara54171 Mansour – New" [ref=e1475] [cursor=pointer]:
+                - cell "Sara54171 Mansour" [ref=e1476]
+                - cell [ref=e416]
+                - cell "–" [ref=e1477]
+                - cell "New" [ref=e1478]:
+                  - generic [ref=e420]: New
+              - row "Omar54172 Saleh – New" [ref=e1479] [cursor=pointer]:
+                - cell "Omar54172 Saleh" [ref=e1480]
+                - cell [ref=e423]
+                - cell "–" [ref=e1481]
+                - cell "New" [ref=e1482]:
+                  - generic [ref=e427]: New
+              - row "Amelia8627 Jones – New" [ref=e1483] [cursor=pointer]:
+                - cell "Amelia8627 Jones" [ref=e1484]
+                - cell [ref=e430]
+                - cell "–" [ref=e1485]
+                - cell "New" [ref=e1486]:
+                  - generic [ref=e434]: New
+              - row "Unique8638 Candidate – New" [ref=e1487] [cursor=pointer]:
+                - cell "Unique8638 Candidate" [ref=e1488]
+                - cell [ref=e437]
+                - cell "–" [ref=e1489]
+                - cell "New" [ref=e1490]:
+                  - generic [ref=e441]: New
+              - row "Fixed1929 Candidate – New" [ref=e1491] [cursor=pointer]:
+                - cell "Fixed1929 Candidate" [ref=e1492]
+                - cell [ref=e444]
+                - cell "–" [ref=e1493]
+                - cell "New" [ref=e1494]:
+                  - generic [ref=e448]: New
+          - generic [ref=e450]:
+            - paragraph [ref=e451]: Rows per page
+            - generic [ref=e452]:
+              - combobox "Rows per page 50" [ref=e1495] [cursor=pointer]: "50"
+              - textbox: "50"
+              - img
+            - paragraph [ref=e454]: 1–50 of 1045
+            - generic [ref=e455]:
+              - button "Go to previous page" [disabled]:
+                - img
+              - button "Go to next page" [ref=e1496] [cursor=pointer]:
+                - img [ref=e457]

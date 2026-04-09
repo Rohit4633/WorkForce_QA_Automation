@@ -1,0 +1,35 @@
+{
+  "cookies": [
+    {
+      "name": "next_url",
+      "value": "https%3A%2F%2Fworkforce.noonstg.partners%2Fen%3Fproject%3DPRJ1455",
+      "domain": ".noonstg.partners",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "visitor_id",
+      "value": "f60cdee7-f955-45fd-be95-0ca6ffe4ac95",
+      "domain": ".noonstg.partners",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "g_state",
+      "value": "{\"i_l\":0,\"i_ll\":1775740405921,\"i_b\":\"9KjZnGVb0UDRz8EzAinMVpy8GOUwhea+UZExgZ6bN6w\",\"i_e\":{\"enable_itp_optimization\":0}}",
+      "domain": "login.noonstg.partners",
+      "path": "/",
+      "expires": 1791292405,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}

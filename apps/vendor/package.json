@@ -1,0 +1,27 @@
+{
+  "name": "vendor",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test":        "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui":     "playwright test --ui",
+    "test:debug":  "playwright test --debug",
+    "report":      "playwright show-report playwright-report"
+  },
+  
+ "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@zerostep/playwright": "^0.1.5",
+    "@types/node": "^25.0.0",
+    "typescript": "^5.9.3",
+    "allure-playwright": "^3.6.0",
+    "dotenv": "^17.0.0"
+  },
+
+  "dependencies": {
+    "@faker-js/faker": "^10.3.0",
+    "fs-extra": "^11.3.4",
+    "xlsx": "^0.18.5"
+  }
+}

@@ -1,0 +1,25 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - generic [ref=e19]:
+            - img [ref=e20]
+            - img [ref=e26]
+            - img [ref=e32]
+          - generic [ref=e118]:
+            - img [ref=e120]
+            - generic [ref=e129]:
+              - heading "Set up a passkey" [level=3] [ref=e130]
+              - paragraph [ref=e131]: Sign in faster and more securely with a passkey.
+            - generic [ref=e132]:
+              - button "Set Up Passkey" [ref=e133] [cursor=pointer]
+              - button "Maybe Later" [ref=e134] [cursor=pointer]
+        - button "Start over with a different user" [ref=e112] [cursor=pointer]
+      - generic [ref=e62]:
+        - button "English" [ref=e64] [cursor=pointer]:
+          - text: English
+          - img [ref=e65]
+        - link "Help" [ref=e70] [cursor=pointer]:
+          - /url: https://support.noon.partners/portal/en/kb/seller-help-center/
+  - alert [ref=e13]

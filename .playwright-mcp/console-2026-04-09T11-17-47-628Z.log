@@ -1,0 +1,11 @@
+[    2447ms] [ERROR] Failed to load resource: the server responded with a status of 500 () @ https://toolbar.noonstg.partners/en/?next=https%3A%2F%2Fworkforce.noonstg.partners%2Fen%3Fproject%3DPRJ1455:0
+[    3379ms] [INFO] 📩  {data: Object, status: 200, statusText: , headers: eT, config: Object} @ https://toolbar.noonstg.partners/public/_next/static/chunks/658-c9c707d1a652b80a.js:0
+[    3396ms] [INFO] 📩  {data: Object, status: 200, statusText: , headers: eT, config: Object} @ https://toolbar.noonstg.partners/public/_next/static/chunks/658-c9c707d1a652b80a.js:0
+[    4136ms] [INFO] 📩  {data: Object, status: 200, statusText: , headers: eT, config: Object} @ https://toolbar.noonstg.partners/public/_next/static/chunks/658-c9c707d1a652b80a.js:0
+[    4139ms] [INFO] 📩  {data: Array(10), status: 200, statusText: , headers: eT, config: Object} @ https://toolbar.noonstg.partners/public/_next/static/chunks/658-c9c707d1a652b80a.js:0
+[    4188ms] [INFO] 📩  {data: Object, status: 200, statusText: , headers: eT, config: Object} @ https://toolbar.noonstg.partners/public/_next/static/chunks/658-c9c707d1a652b80a.js:0
+[    4775ms] [INFO] 📩  {data: Object, status: 200, statusText: , headers: eT, config: Object} @ https://toolbar.noonstg.partners/public/_next/static/chunks/658-c9c707d1a652b80a.js:0
+[    4778ms] [INFO] 📩  {data: Object, status: 200, statusText: , headers: eT, config: Object} @ https://toolbar.noonstg.partners/public/_next/static/chunks/658-c9c707d1a652b80a.js:0
+[    4782ms] [INFO] 📩  {data: Object, status: 200, statusText: , headers: eT, config: Object} @ https://toolbar.noonstg.partners/public/_next/static/chunks/658-c9c707d1a652b80a.js:0
+[    4784ms] [INFO] 📩  {data: Array(10), status: 200, statusText: , headers: eT, config: Object} @ https://toolbar.noonstg.partners/public/_next/static/chunks/658-c9c707d1a652b80a.js:0
+[    5444ms] [INFO] 📩  {data: Object, status: 200, statusText: , headers: eT, config: Object} @ https://toolbar.noonstg.partners/public/_next/static/chunks/658-c9c707d1a652b80a.js:0

@@ -1,32 +1,14 @@
 {
-  "name": "playwright_claude_workforce_automation",
+  "name": "playwright-zerostep-e2e",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "devDependencies": {
-    "@faker-js/faker": "^10.3.0",
-    "@playwright/test": "^1.58.2",
-    "@types/fs-extra": "^11.0.4",
-    "@types/inquirer": "^9.0.9",
-    "@types/node": "^25.4.0",
-    "allure-commandline": "^2.38.1",
-    "allure-playwright": "^3.6.0",
-    "dotenv": "^17.3.1",
-    "typescript": "^5.9.3"
-  },
-  "dependencies": {
-    "@zerostep/playwright": "^0.1.5",
-    "chalk": "^5.6.2",
-    "fs-extra": "^11.3.4",
-    "inquirer": "^13.3.2",
-    "openai": "^6.31.0",
-    "ora": "^9.3.0",
-    "winston": "^3.19.0",
-    "xlsx": "^0.18.5"
+  "private": true,
+  "scripts": {
+    "test:vendor":           "pnpm --filter vendor test",
+    "test:checklist":        "pnpm --filter checklist test",
+    "test:wfbu":             "pnpm --filter wfbu test",
+    "test:all":              "pnpm --filter vendor test && pnpm --filter checklist test && pnpm --filter wfbu test",
+    "test:vendor:headed":    "pnpm --filter vendor test:headed",
+    "test:checklist:headed": "pnpm --filter checklist test:headed",
+    "test:wfbu:headed":      "pnpm --filter wfbu test:headed"
   }
 }

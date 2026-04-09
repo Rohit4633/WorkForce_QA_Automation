@@ -1,0 +1,4 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - img [ref=e11]
+  - alert [ref=e13]
