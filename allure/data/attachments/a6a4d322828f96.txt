@@ -1,0 +1,4 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+✅ File downloaded: members_list_2026-04-09.csv
+✅ File exists at: /home/runner/work/WorkForce_QA_Automation/WorkForce_QA_Automation/apps/vendor/test-results/.playwright-artifacts-1/f9466ede-8257-4def-b420-d4a351327c77

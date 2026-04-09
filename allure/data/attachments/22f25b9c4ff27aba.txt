@@ -1,0 +1,4 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+✅ Profile heading updated to: "Neha2353ed Sharma"
+✅ Name restored to: "Neha2353 Sharma"

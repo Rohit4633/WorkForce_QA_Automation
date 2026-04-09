@@ -1,0 +1,6 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+📊 Total reports before filter: 4
+📊 Reports after search: 3
+📊 Reports after clear: 4
+✅ All 4 reports restored after clearing filters

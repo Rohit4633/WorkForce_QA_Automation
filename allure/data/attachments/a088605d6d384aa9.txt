@@ -1,0 +1,3 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+✅ Reports URL: https://workforce.noonstg.partners/en/reports?project=PRJ1455

@@ -1,0 +1,6 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+💾 Saved passport number: WB5366687
+Using passport number: WB5366687
+✅ Add document modal opened
+✅ Passport document verified in Documents section

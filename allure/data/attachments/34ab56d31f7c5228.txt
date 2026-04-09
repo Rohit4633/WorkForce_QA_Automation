@@ -1,0 +1,12 @@
+Adding contact — Title: Director3910, Name: Khalid3910 Farouk, Phone: +971582173164, Email: contact763910@testmail.com
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+Business Settings button not visible — navigating directly
+✅ Add contact modal opened
+✅ Finance Contact selected
+✅ Title filled: Director3910
+✅ Name filled: Khalid3910 Farouk
+✅ Phone filled: +971582173164
+✅ Email filled: contact763910@testmail.com
+✅ Apply clicked
+✅ Contact Khalid3910 Farouk found in table

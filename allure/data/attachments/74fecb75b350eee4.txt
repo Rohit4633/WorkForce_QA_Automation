@@ -1,0 +1,4 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+✅ Profile heading: "Neha2353 Sharma"
+✅ Status badge visible

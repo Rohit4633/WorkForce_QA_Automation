@@ -1,0 +1,6 @@
+Editing candidate: Neha2353 Sharma
+New work phone: +91 9845284421
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+✅ Profile page opened
+✅ Work phone +91 9845284421 updated successfully

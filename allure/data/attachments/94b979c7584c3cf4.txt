@@ -1,0 +1,5 @@
+Searching for candidate: Neha2353 Sharma
+Using phone search term: 98299039
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+✅ Candidate Neha2353 Sharma found via phone search
