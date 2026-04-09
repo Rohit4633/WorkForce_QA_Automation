@@ -1,4 +1,0 @@
-⚠️ Project not selected — handling project selector popup
-Popup not visible — navigating directly to correct URL
-✅ Business Settings URL: https://workforce.noonstg.partners/en/business-settings?project=PRJ1455
-✅ Business Settings page content visible

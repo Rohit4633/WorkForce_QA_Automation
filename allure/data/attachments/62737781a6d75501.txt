@@ -1,8 +1,0 @@
-⚠️ Project not selected — handling project selector popup
-Popup not visible — navigating directly to correct URL
-✅ Passport already exists in table: WB5366687
-💾 Saved passport number: WB5366687
-✅ Three dots menu opened for Passport
-✅ Delete option clicked
-✅ Delete confirmed
-✅ Passport document successfully deleted

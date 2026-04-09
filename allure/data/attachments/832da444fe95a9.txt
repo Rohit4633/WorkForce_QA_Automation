@@ -1,8 +1,0 @@
-⚠️ Project not selected — handling project selector popup
-Popup not visible — navigating directly to correct URL
-Business Settings button not visible — navigating directly
-✅ Navigated to Business Settings
-✅ Business Settings page loaded
-✅ Company name visible
-✅ Country visible
-✅ Contacts table columns verified

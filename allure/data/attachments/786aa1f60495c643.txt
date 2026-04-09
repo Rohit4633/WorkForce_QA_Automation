@@ -1,9 +1,0 @@
-Adding contact — Title: Director3101, Name: Sara3101 Mansour, Phone: +971581516421, Email: contact783102@testmail.com
-⚠️ Project not selected — handling project selector popup
-Popup not visible — navigating directly to correct URL
-Business Settings button not visible — navigating directly
-✅ Contact Type verified in table
-✅ Title Director3101 verified in table
-✅ Name Sara3101 Mansour verified in table
-✅ Email contact783102@testmail.com verified in table
-✅ All contact details verified in table

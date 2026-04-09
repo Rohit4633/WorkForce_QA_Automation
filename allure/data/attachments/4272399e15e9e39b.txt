@@ -1,8 +1,0 @@
-⚠️ Project not selected — handling project selector popup
-Popup not visible — navigating directly to correct URL
-Opening profile: Neha2353 Sharma
-Verifying Emirates ID: 784-1985-4353931-8
-✅ Emirates ID 784-1985-4353931-8 found in Documents
-✅ Document type "Emirates ID" verified
-✅ Three dots menu opened
-✅ Delete button is disabled for Emirates ID
