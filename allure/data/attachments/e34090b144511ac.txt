@@ -1,0 +1,9 @@
+Adding contact — Title: Manager3524, Name: Sara3524 Mansour, Phone: +971521002647, Email: contact043524@testmail.com
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+Business Settings button not visible — navigating directly
+✅ Contact Type verified in table
+✅ Title Manager3524 verified in table
+✅ Name Sara3524 Mansour verified in table
+✅ Email contact043524@testmail.com verified in table
+✅ All contact details verified in table

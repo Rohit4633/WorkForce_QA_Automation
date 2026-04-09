@@ -1,0 +1,10 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+Business Settings button not visible — navigating directly
+✅ Add contact modal opened
+✅ Contact type validation error shown
+✅ Contact title validation error shown
+✅ Contact name validation error shown
+✅ Phone number validation error shown
+✅ Email validation error shown
+✅ All 5 validation errors verified for empty form

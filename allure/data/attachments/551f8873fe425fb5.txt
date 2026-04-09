@@ -1,0 +1,11 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+✅ Passport already exists in table: SD3560802
+💾 Saved passport number: SD3560802
+Using passport number: SD3560802
+✅ Three dots menu opened for Passport
+✅ View option clicked
+✅ View document modal opened
+✅ Passport document type verified in view modal
+✅ Passport number SD3560802 verified in view modal
+✅ View modal closed

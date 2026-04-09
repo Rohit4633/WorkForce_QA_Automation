@@ -1,0 +1,5 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+✅ On Reports page
+✅ Back on homepage: https://workforce.noonstg.partners/en?project=PRJ1455
+✅ "Team" heading visible on homepage

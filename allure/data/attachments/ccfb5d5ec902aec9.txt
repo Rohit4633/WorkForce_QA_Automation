@@ -1,0 +1,4 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+📋 Visible reports after search: ["Document Number Summary","Expired Documents","Expiring Soon Documents"]
+✅ Only Document reports shown (3), "All Profiles" not visible
