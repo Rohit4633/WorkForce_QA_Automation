@@ -1,7 +1,0 @@
-⚠️ Project not selected — handling project selector popup
-Popup not visible — navigating directly to correct URL
-✅ First name validation error shown
-✅ Last name validation error shown
-✅ Phone number validation error shown
-✅ Nationality validation error shown
-✅ All validation errors displayed correctly for empty form

@@ -1,8 +1,0 @@
-⚠️ Project not selected — handling project selector popup
-Popup not visible — navigating directly to correct URL
-📄 Page 1 has 50 candidates
-First candidate on page 1: Unique8943 Candidate
-📄 Page 2 has 50 candidates
-First candidate on page 2: Ahmed11030 Hassan
-✅ Page 2 shows different candidates than page 1
-✅ Previous page navigates back to page 1 correctly

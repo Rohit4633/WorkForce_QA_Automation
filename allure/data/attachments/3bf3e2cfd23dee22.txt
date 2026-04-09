@@ -1,6 +1,0 @@
-Editing candidate: Neha1989 Dharmapala
-New work phone: +91 9884056471
-⚠️ Project not selected — handling project selector popup
-Popup not visible — navigating directly to correct URL
-✅ Profile page opened
-✅ Work phone +91 9884056471 updated successfully
