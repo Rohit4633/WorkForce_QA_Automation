@@ -45,15 +45,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install
 
       - name: Install Playwright Browsers
+        working-directory: apps/vendor
         run: npx playwright install --with-deps chromium
 
       - name: Run Smoke Tests
+        working-directory: apps/vendor
         run: npx playwright test tests/e2e/Candidate/01-create-candidate.spec.ts tests/e2e/homepage/04-homepage-search.spec.ts --workers=1
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
@@ -68,8 +74,8 @@ jobs:
         with:
           name: smoke-test-results
           path: |
-            test-results/
-            playwright-report/
+            apps/vendor/test-results/
+            apps/vendor/playwright-report/
           if-no-files-found: ignore
           retention-days: 7
 
@@ -88,12 +94,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install
 
       - name: Install Playwright Browsers
+        working-directory: apps/vendor
         run: npx playwright install --with-deps chromium
 
       - name: Install Allure commandline
@@ -104,9 +115,10 @@ jobs:
         continue-on-error: true
         with:
           name: allure-history
-          path: allure-history
+          path: apps/vendor/allure-history
 
       - name: Run Full E2E Tests
+        working-directory: apps/vendor
         run: npx playwright test --workers=1
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
@@ -117,6 +129,7 @@ jobs:
 
       - name: Generate Allure Report
         if: always()
+        working-directory: apps/vendor
         run: |
           if [ -d "allure-history" ]; then
             allure generate allure-results --clean -o allure-report --history allure-history
@@ -126,6 +139,7 @@ jobs:
 
       - name: Save Allure history
         if: always()
+        working-directory: apps/vendor
         run: cp -r allure-report/history allure-history || true
 
       - name: Upload Allure history artifact
@@ -133,7 +147,7 @@ jobs:
         if: always()
         with:
           name: allure-history
-          path: allure-history
+          path: apps/vendor/allure-history
           if-no-files-found: ignore
           retention-days: 30
 
@@ -147,15 +161,15 @@ jobs:
           echo "**Triggered by:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 📊 Reports" >> $GITHUB_STEP_SUMMARY
-          echo "- Playwright Report: https://Rohit4633.github.io/playwright-zerostep-e2e/" >> $GITHUB_STEP_SUMMARY
-          echo "- Allure Report: https://Rohit4633.github.io/playwright-zerostep-e2e/allure/" >> $GITHUB_STEP_SUMMARY
+          echo "- Playwright Report: https://Rohit4633.github.io/WorkForce_QA_Automation/" >> $GITHUB_STEP_SUMMARY
+          echo "- Allure Report: https://Rohit4633.github.io/WorkForce_QA_Automation/allure/" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
-          path: playwright-report/
+          path: apps/vendor/playwright-report/
           if-no-files-found: ignore
           retention-days: 30
 
@@ -164,7 +178,7 @@ jobs:
         if: always()
         with:
           name: allure-report
-          path: allure-report/
+          path: apps/vendor/allure-report/
           if-no-files-found: ignore
           retention-days: 30
 
@@ -173,7 +187,7 @@ jobs:
         if: always()
         with:
           name: test-results-with-screenshots
-          path: test-results/
+          path: apps/vendor/test-results/
           if-no-files-found: ignore
           retention-days: 7
 
@@ -182,7 +196,7 @@ jobs:
         if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./playwright-report
+          publish_dir: ./apps/vendor/playwright-report
           destination_dir: .
 
       - name: Deploy Allure Report to GitHub Pages
@@ -190,6 +204,6 @@ jobs:
         if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./allure-report
+          publish_dir: ./apps/vendor/allure-report
           destination_dir: allure
           keep_files: true
