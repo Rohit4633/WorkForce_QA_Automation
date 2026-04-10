@@ -1,0 +1,9 @@
+Adding contact — Title: Director6612, Name: Tariq6612 Mansour, Phone: +971548852048, Email: contact826612@testmail.com
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+Business Settings button not visible — navigating directly
+✅ Contact Type verified in table
+✅ Title Director6612 verified in table
+✅ Name Tariq6612 Mansour verified in table
+✅ Email contact826612@testmail.com verified in table
+✅ All contact details verified in table

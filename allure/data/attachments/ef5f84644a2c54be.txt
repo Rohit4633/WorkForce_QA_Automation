@@ -1,0 +1,8 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+Opening profile: Isabella8746 Anderson
+Verifying Emirates ID: 784-1964-8238787-2
+✅ Emirates ID 784-1964-8238787-2 found in Documents
+✅ Document type "Emirates ID" verified
+✅ Three dots menu opened
+✅ Delete button is disabled for Emirates ID

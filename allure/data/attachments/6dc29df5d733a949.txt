@@ -1,0 +1,4 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+✅ Profile heading: "Isabella8746 Anderson"
+✅ Status badge visible

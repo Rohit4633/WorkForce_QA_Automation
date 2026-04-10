@@ -1,0 +1,4 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+✅ Profile heading updated to: "Isabella8746ed Anderson"
+✅ Name restored to: "Isabella8746 Anderson"

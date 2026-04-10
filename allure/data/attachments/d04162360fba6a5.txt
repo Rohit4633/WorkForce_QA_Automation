@@ -1,0 +1,12 @@
+Adding contact — Title: Director7602, Name: Ahmed7602 Mansour, Phone: +971583923167, Email: contact807602@testmail.com
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+Business Settings button not visible — navigating directly
+✅ Add contact modal opened
+✅ Finance Contact selected
+✅ Title filled: Director7602
+✅ Name filled: Ahmed7602 Mansour
+✅ Phone filled: +971583923167
+✅ Email filled: contact807602@testmail.com
+✅ Apply clicked
+✅ Contact Ahmed7602 Mansour found in table

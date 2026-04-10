@@ -1,0 +1,16 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+📄 Template created at: /home/runner/work/WorkForce_QA_Automation/WorkForce_QA_Automation/apps/vendor/tests/data/bulk-upload-template.xlsx
+📋 Candidate: Ahmed35180 Hassan
+📋 Candidate: Sara35181 Mansour
+📋 Candidate: Omar35182 Saleh
+📋 Candidate: Layla35183 Nasser
+📋 Candidate: Khalid35184 Farouk
+📤 File uploaded: /home/runner/work/WorkForce_QA_Automation/WorkForce_QA_Automation/apps/vendor/tests/data/bulk-upload-template.xlsx
+✅ Import successful
+✅ 5 rows processed successfully
+✅ Ahmed35180 Hassan found in table
+✅ Sara35181 Mansour found in table
+✅ Omar35182 Saleh found in table
+✅ Layla35183 Nasser found in table
+✅ Khalid35184 Farouk found in table

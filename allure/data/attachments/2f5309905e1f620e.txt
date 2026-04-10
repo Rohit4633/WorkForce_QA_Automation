@@ -1,0 +1,6 @@
+Editing candidate: Isabella8746 Anderson
+New work phone: +91 9812085089
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+✅ Profile page opened
+✅ Work phone +91 9812085089 updated successfully

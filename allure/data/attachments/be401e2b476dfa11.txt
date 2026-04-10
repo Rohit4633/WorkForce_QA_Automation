@@ -1,0 +1,6 @@
+⚠️ Project not selected — handling project selector popup
+Popup not visible — navigating directly to correct URL
+💾 Saved passport number: XS9452682
+Using passport number: XS9452682
+✅ Add document modal opened
+✅ Passport document verified in Documents section
