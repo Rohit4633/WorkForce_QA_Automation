@@ -1,4 +1,0 @@
-⚠️ Project not selected — handling project selector popup
-Popup not visible — navigating directly to correct URL
-✅ File downloaded: members_list_2026-04-09.csv
-✅ Combined filter file exists at: /home/runner/work/WorkForce_QA_Automation/WorkForce_QA_Automation/apps/vendor/test-results/.playwright-artifacts-1/c59030e7-3401-4b20-8559-0480c2356176

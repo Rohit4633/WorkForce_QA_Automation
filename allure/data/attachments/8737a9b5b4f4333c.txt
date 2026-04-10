@@ -1,4 +1,0 @@
-⚠️ Project not selected — handling project selector popup
-Popup not visible — navigating directly to correct URL
-✅ Single number as first name rejected with correct error
-✅ Single letter first name accepted successfully
